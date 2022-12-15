@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ZONE_ID="Z02266743LCLZMJHWB4RC"
+ZONE_ID="Z0842584HS4XKI3IA0U0"
 SG_NAME="allow-all"
 
 create_ec2() {
