@@ -9,7 +9,7 @@ create_ec2() {
       --instance-type t3.micro \
       --security-group-ids ${SGID} \
       --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" \
-      --instance-market-options "MarketType=Spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}" \
+      --instance-market-options "MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}" \
       | jq '.Instances[].PrivateIpAddress' | sed -e 's/"//g')
 
 sed -e "s/IPADDRESS/${PRIVATE_IP}/" -e "s/COMPONENT/${COMPONENT}/" route53.json >/tmp/record.json
