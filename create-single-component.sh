@@ -26,12 +26,9 @@ if [ -z "${SGID}" ]; then
   echo "Given Security Group does not exit"
   exit 1
 fi
-
+   COMPONENT="${COMPONENT}"
 if [ -z "${COMPONENT}" ]; then
   echo "component name is missing"
   exit 1
-  else
-  COMPONENT="${COMPONENT}"
-  create_ec2
 fi
-
+create_ec2
