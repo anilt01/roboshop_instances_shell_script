@@ -26,7 +26,7 @@ if [ -z "${SGID}" ]; then
   echo "Given Security Group does not exit"
   exit 1
 fi
-   COMPONENT="${COMPONENT}"
+   COMPONENT="${1}"
 if [ -z "${COMPONENT}" ]; then
   echo "component name is missing"
   exit 1
