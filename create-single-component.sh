@@ -27,9 +27,11 @@ if [ -z "${SGID}" ]; then
   exit 1
 fi
 
-if [ -z "${component}" ]; then
-  echo "Component name is missing"
-  COMPONENT="${component}"
+if [ -z "${COMPONENT}" ]; then
+  echo "component name is missing"
+  exit 1
+  else
+  COMPONENT="${COMPONENT}"
   create_ec2
 fi
 
